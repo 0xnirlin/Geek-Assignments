@@ -16,7 +16,7 @@ const Page = ({ blogData }) => {
   if(router.isFallback)
   {
     return(
-      <div>
+      <div className="w-full h-screen flex items-center justify-center">
         <CircularProgress></CircularProgress>
       </div>
     )
@@ -85,7 +85,7 @@ export async function getStaticPaths() {
   //fetch the data from the required api
   const response = await fetch("https://guarded-atoll-38212.herokuapp.com/api/geek-blogs");
   const dataObject = await response.json();
-  const paths = Object.entries(dataObject)[0][1].map((data) => {
+  const myPaths = Object.entries(dataObject)[0][1].map((data) => {
     return {
       params: {
         slug: data.attributes.Heading.split(" ").join("-"),
@@ -95,7 +95,7 @@ export async function getStaticPaths() {
 
   // create the array of params with the ids
   return {
-    paths: [{ params: { slug: "1" } }],
+    paths: [myPaths],
     fallback: true, // can also be true or 'blocking'
   };
 }
