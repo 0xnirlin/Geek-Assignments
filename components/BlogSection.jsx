@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
+import CircularProgress from "@mui/material/CircularProgress";
+
 
 const BlogSection = ({ data,cmd,featured,theme }) => {
     console.log("Featured: ",featured)
@@ -50,7 +52,9 @@ const BlogSection = ({ data,cmd,featured,theme }) => {
           ))}
         </div>
       ) : (
-        "Load Honay Day BSDK"
+        <div className="mt-20">
+          <CircularProgress></CircularProgress>
+        </div>
       )}
     </div>
   );
