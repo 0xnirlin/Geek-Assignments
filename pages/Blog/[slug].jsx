@@ -7,9 +7,21 @@ import CircularProgress from "@mui/material/CircularProgress";
 
 const Page = ({ blogData }) => {
   const baseURL = "https://guarded-atoll-38212.herokuapp.com";
+
+
   // console.log("Data Locl: ", blogData);
 
+  if(blogData.meta.pagination.total === 0)
+  {
+    return (
+      <div className="w-full h-screen flex items-center justify-center">
+        <div className="text-4xl font-bold text-red-500">No Such Blog Exists Go To Main Page</div>
+      </div>
+    )
+  }
+
   return (
+    
     <div className="flex h-auto w-full items-center justify-center">
       {blogData ? (
         <div id="bgImg" className="w-[80%] h-auto relative border mt-10 mb-10 pb-10 ">
@@ -88,12 +100,17 @@ export async function getStaticPaths() {
 export async function getStaticProps({ params }) {
   const pid = params.slug;
   console.log("PID: ", pid);
+  let blogData;
   //fetch
-  const response = await fetch(
-    `https://guarded-atoll-38212.herokuapp.com/api/geek-blogs?filters[Slug][$eq]=${pid}&pagination[start]=0&pagination[limit]=1&populate=*`
-  );
-  const blogData = await response.json();
-  console.log("Current Blog: ", blogData.data[0].attributes);
+
+    const response = await fetch(
+      `https://guarded-atoll-38212.herokuapp.com/api/geek-blogs?filters[Slug][$eq]=${pid}&pagination[start]=0&pagination[limit]=1&populate=*`
+    );
+     blogData = await response.json();
+    
+     console.log("BLGDTA: ",blogData.meta.pagination.total)
+  
+  // console.log("Current Blog: ", blogData.data[0].attributes);
   //get the data and pass to the page
   return {
     // Passed to the page component as props
