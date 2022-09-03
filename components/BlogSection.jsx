@@ -5,13 +5,13 @@ import Link from "next/link";
 const BlogSection = ({ data,cmd,featured,theme }) => {
     console.log("Featured: ",featured)
     cmd?cmd:cmd=""
-  const baseURL = "http://localhost:1337";
+  const baseURL = "https://guarded-atoll-38212.herokuapp.com";
   const [myData, setData] = useState("");
   const [loading, setLoading] = useState(false);
   useEffect(() => {
     setLoading(true);
     fetch(
-      `http://localhost:1337/api/geek-blogs?${featured===true?"filters[Featured][$eq]=true&pagination[start]=0&pagination[limit]=3":""}&populate=*&_sort=date:DESC`
+      `https://guarded-atoll-38212.herokuapp.com/geek-blogs?${featured===true?"filters[Featured][$eq]=true&pagination[start]=0&pagination[limit]=3":""}&populate=*&_sort=date:DESC`
     )
       .then((res) => res.json())
       .then((data) => {

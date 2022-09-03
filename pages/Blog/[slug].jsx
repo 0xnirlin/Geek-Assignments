@@ -7,8 +7,8 @@ import CircularProgress from "@mui/material/CircularProgress";
 import PostContent from "../../components/PostContent";
 
 const Page = ({ blogData }) => {
-  const baseURL = "http://localhost:1337";
-  console.log("Data Locl: ", blogData);
+  const baseURL = "https://guarded-atoll-38212.herokuapp.com";
+  // console.log("Data Locl: ", blogData);
 
   return (
     <div className="flex h-auto w-full items-center justify-center">
@@ -66,9 +66,9 @@ escapeHtml={false}  />
 
 // Generates `/posts/1` and `/posts/2`
 export async function getStaticPaths() {
-  const baseURL = "http://localhost:1337";
+  const baseURL = "https://guarded-atoll-38212.herokuapp.com";
   //fetch the data from the required api
-  const response = await fetch("http://localhost:1337/api/geek-blogs");
+  const response = await fetch("https://guarded-atoll-38212.herokuapp.com/api/geek-blogs");
   const dataObject = await response.json();
   const paths = Object.entries(dataObject)[0][1].map((data) => {
     console.log("HEADING: ", data.attributes.Heading);
@@ -91,7 +91,7 @@ export async function getStaticProps({ params }) {
   console.log("PID: ", pid);
   //fetch
   const response = await fetch(
-    `http://localhost:1337/api/geek-blogs?filters[Slug][$eq]=${pid}&pagination[start]=0&pagination[limit]=1&populate=*`
+    `https://guarded-atoll-38212.herokuapp.com/api/geek-blogs?filters[Slug][$eq]=${pid}&pagination[start]=0&pagination[limit]=1&populate=*`
   );
   const blogData = await response.json();
   console.log("Current Blog: ", blogData.data[0].attributes);
