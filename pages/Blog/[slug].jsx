@@ -82,7 +82,6 @@ export async function getStaticPaths() {
   const response = await fetch("https://guarded-atoll-38212.herokuapp.com/api/geek-blogs");
   const dataObject = await response.json();
   const paths = Object.entries(dataObject)[0][1].map((data) => {
-    console.log("HEADING: ", data.attributes.Heading);
     return {
       params: {
         slug: data.attributes.Heading.split(" ").join("-"),
@@ -93,13 +92,12 @@ export async function getStaticPaths() {
   // create the array of params with the ids
   return {
     paths: [{ params: { slug: "1" } }],
-    fallback: true, // can also be true or 'blocking'
+    fallback: false, // can also be true or 'blocking'
   };
 }
 
 export async function getStaticProps({ params }) {
   const pid = params.slug;
-  console.log("PID: ", pid);
   let blogData;
   //fetch
 
@@ -108,9 +106,7 @@ export async function getStaticProps({ params }) {
     );
      blogData = await response.json();
     
-     console.log("BLGDTA: ",blogData.meta.pagination.total)
   
-  // console.log("Current Blog: ", blogData.data[0].attributes);
   //get the data and pass to the page
   return {
     // Passed to the page component as props
