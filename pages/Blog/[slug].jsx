@@ -4,6 +4,7 @@ import gfm from "remark-gfm";
 import rehypeRaw from "rehype-raw";
 import Image from "next/image";
 import CircularProgress from "@mui/material/CircularProgress";
+import { useRouter } from "next/router";
 
 const Page = ({ blogData }) => {
   const baseURL = "https://guarded-atoll-38212.herokuapp.com";
@@ -11,16 +12,26 @@ const Page = ({ blogData }) => {
 
   // console.log("Data Locl: ", blogData);
 
-  if(blogData.meta.pagination.total === 0)
+  const router = useRouter()
+  if(router.isFallback)
   {
-    return (
-      <div className="w-full h-screen flex items-center justify-center">
-        <div className="text-4xl font-bold text-red-500">No Such Blog Exists Go To Main Page</div>
+    return(
+      <div>
+        <CircularProgress></CircularProgress>
       </div>
     )
   }
-
+  if(!router.isFallback && blogData.meta.pagination.total === 0)
+  {
+    return(
+      <div className="w-full h-screen flex items-center justify-center">
+        <div className="text-4xl text-slate-600 font-bold">404 | No Such Blog Exists</div>
+      </div>
+    )
+  }
   return (
+    
+    
     
     <div className="flex h-auto w-full items-center justify-center">
       {blogData ? (
