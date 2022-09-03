@@ -24,7 +24,7 @@ const BlogSection = ({ data,cmd,featured,theme }) => {
 
   return (
     <div className={`w-full min-h-[60vh] flex flex-wrap items-center flex-col ${theme=="light"?"bg-white":"bg-gray-800"} `}>
-          {featured === true?<div className="text-5xl text-gray-300 font-bold ml-auto mr-auto my-10 ">Featured Blogs</div>:<div className="text-6xl text-slate-700 font-black ml-auto mr-auto my-10 capitalize font-mono "> Blog </div>}
+          {featured === true?<div className={`text-5xl ${theme=="light"?"text-gray-700":"text-gray-300"} font-bold ml-auto mr-auto my-10 `}>Featured Blogs</div>:<div className="text-6xl text-slate-700 font-black ml-auto mr-auto my-10 capitalize font-mono "> Blog </div>}
       {!loading ? (
         <div className={`flex   items-center justify-center flex-wrap h-[90%]  p-14 ${featured==true?'gap-14':'gap-4'} `}>
           

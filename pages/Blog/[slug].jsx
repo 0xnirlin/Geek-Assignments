@@ -5,6 +5,7 @@ import rehypeRaw from "rehype-raw";
 import Image from "next/image";
 import CircularProgress from "@mui/material/CircularProgress";
 import { useRouter } from "next/router";
+import BlogSection from "../../components/BlogSection";
 
 const Page = ({ blogData }) => {
   const baseURL = "https://guarded-atoll-38212.herokuapp.com";
@@ -26,7 +27,7 @@ const Page = ({ blogData }) => {
     
     
     
-    <div className="flex h-auto w-full items-center justify-center">
+    <div className="flex h-auto w-full items-center justify-center flex-col">
       {blogData ? (
         <div id="bgImg" className="w-[80%] h-auto relative border mt-10 mb-10 pb-10 ">
           <div
@@ -75,6 +76,7 @@ escapeHtml={false}  />
           <CircularProgress />
         </div>
       )}
+      <BlogSection featured={true} cmd={"pagination[start]=0&pagination=2"} theme={"light"}></BlogSection>
     </div>
   );
 };
@@ -95,7 +97,7 @@ export async function getStaticPaths() {
 
   // create the array of params with the ids
   return {
-    paths: [myPaths],
+    paths: [...myPaths],
     fallback: true, // can also be true or 'blocking'
   };
 }
