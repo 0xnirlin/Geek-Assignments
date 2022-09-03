@@ -103,7 +103,7 @@ export async function getStaticPaths() {
   // create the array of params with the ids
   return {
     paths: [{ params: { slug: "1" } }],
-    fallback: false, // can also be true or 'blocking'
+    fallback: true, // can also be true or 'blocking'
   };
 }
 
