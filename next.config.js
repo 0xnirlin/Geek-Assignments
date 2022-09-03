@@ -4,7 +4,7 @@ const nextConfig = {
   reactStrictMode: true,
   swcMinify: true,
   images: {
-    domains: ["localhost"],
+    domains: ["guarded-atoll-38212.herokuapp.com"],
   },
 }
 

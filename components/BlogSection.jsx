@@ -11,7 +11,7 @@ const BlogSection = ({ data,cmd,featured,theme }) => {
   useEffect(() => {
     setLoading(true);
     fetch(
-      `https://guarded-atoll-38212.herokuapp.com/geek-blogs?${featured===true?"filters[Featured][$eq]=true&pagination[start]=0&pagination[limit]=3":""}&populate=*&_sort=date:DESC`
+      `https://guarded-atoll-38212.herokuapp.com/api/geek-blogs?${featured===true?"filters[Featured][$eq]=true&pagination[start]=0&pagination[limit]=3":""}&populate=*&_sort=date:DESC`
     )
       .then((res) => res.json())
       .then((data) => {
