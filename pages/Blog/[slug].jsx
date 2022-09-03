@@ -4,7 +4,6 @@ import gfm from "remark-gfm";
 import rehypeRaw from "rehype-raw";
 import Image from "next/image";
 import CircularProgress from "@mui/material/CircularProgress";
-import PostContent from "../../components/PostContent";
 
 const Page = ({ blogData }) => {
   const baseURL = "https://guarded-atoll-38212.herokuapp.com";
