@@ -21,7 +21,7 @@ const Page = ({ blogData }) => {
       </div>
     )
   }
-  if(!router.isFallback && blogData.meta.pagination.total === 0)
+  if(!router.isFallback && blogData?.meta?.pagination?.total === 0)
   {
     return(
       <div className="w-full h-screen flex items-center justify-center">
