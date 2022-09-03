@@ -32,8 +32,7 @@ const BlogSection = ({ data,cmd,featured,theme }) => {
             <Link href={'/Blog/'+item[1].attributes.Heading.split(" ").join("-")}>
             <div className="ml-auto max-w-[300px]  rounded-xl overflow-hidden  mr-auto   mt-auto s mb-10 bg-white  h-[26rem] hover:-translate-y-6 hover:cursor-pointer transition-all duration-700  shadow-lg   ">
               <div id="Image" className="h-[50%]  overflow-hidden" onClick={(e) => e.preventDefault()}>
-                <Image
-                  src={
+                <Image src={
                       baseURL +
                       item[1].attributes.Image.data.attributes.formats.medium.url
                   }
