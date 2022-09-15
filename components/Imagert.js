@@ -56,7 +56,7 @@ const Imagert = () => {
               <div class="border-t border-gray-200 pt-4">
                 <dt class="font-medium text-gray-900">Heading 6</dt>
                 <dd class="mt-2 text-sm text-gray-500">
-                  Made from natural materials. Grain .
+                Lorem, ipsum dolor sit amet consectetur adipisicing el
                 </dd>
               </div>
             </dl>
