@@ -2,18 +2,40 @@ import React from "react";
 import Image from "next/image";
 import Link from "next/link";
 import student from "./student.jpg";
+import animationData from "./study.json"
+import Lottie from "react-lottie";
+import team from './team.jpg'
+import Fade from 'react-reveal/Fade';
+
+
 
 const Header = () => {
+  const defaultOptions = {
+    loop: true,
+    autoplay: true,
+    animationData: animationData,
+    rendererSettings: {
+      preserveAspectRatio: "xMidYMid slice",
+    },
+  };
   return (
-    <div className="bg-gray-800 w-full h-full flex flex-row">
+    <div className="bg-gray-800 w-full h-full flex flex-row backy" style={{  
+      backgroundImage: "url(" + "https://i.ibb.co/2jfs7PZ/Group-1.png" + ")",
+      backgroundPosition: 'center',
+      backgroundSize: 'cover',
+      backgroundRepeat: 'no-repeat'
+    }}>
+
+    <Fade left>
       <div
         id="text"
-        className="w-[50%] flex flex-col text-white items-center justify-center h-[80%] gap-2 mt-10   "
+        className="w-[50%] flex flex-col text-white  h-[70%] gap-2  mr-auto items-center justify-center mt-24    "
       >
-        <div className="ml-14 w-[70%] text-5xl font-semibold leading-tight font-mono ">
+        
+        <div className="ml-14 w-[70%] text-5xl font-semibold leading-tight font-sans ">
           We Are The Best At Providing The Online Assignment Services
         </div>
-        <div className="ml-14 w-[70%] text-sm font-light  font-mono leading-relaxed mt-2 text-slate-400 ">
+        <div className="ml-14 w-[70%] text-sm font-light  font-mono leading-relaxed mt-2 text-white ">
           We help you with all your academic hurdles whether it be assignment,
           projects or online tests. You are just one click aways from acheiving
           your dream.
@@ -28,14 +50,9 @@ const Header = () => {
           </div>
         </div>
       </div>
-{/*  */}
-      {/* <div id="images" className="w-[50%] items-center justify-center flex"> */}
-        <div className="w-[20%] h-[70%] rounded-xl overflow-hidden rounded-b-2xl mr-44 border-violet-400 border-4 relative ml-40 mt-20">
+      </Fade>
 
-          <Image src={student} objectFit={'fill'} layout={'fill'}  ></Image>
-       
-        </div>
-      {/* </div> */}
+      
     </div>
   );
 };

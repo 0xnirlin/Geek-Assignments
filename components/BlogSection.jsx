@@ -12,6 +12,7 @@ const BlogSection = ({ data,cmd,featured,theme }) => {
   const [loading, setLoading] = useState(false);
   useEffect(() => {
     setLoading(true);
+    
     fetch(
       `https://guarded-atoll-38212.herokuapp.com/api/geek-blogs?${featured===true?"filters[Featured][$eq]=true&pagination[start]=0&pagination[limit]=3":""}&populate=*&_sort=date:DESC`
     )
@@ -40,7 +41,7 @@ const BlogSection = ({ data,cmd,featured,theme }) => {
                   height={400}
                 ></Image>
               </div>
-              <div className="mx-4 -mt-10">
+              <div className="mx-4 ">
                 <div id="Heading" className="flex text-lg leading-relaxed font-bold mt-4 md:text-lg lg:text-xl ">
                   {item[1].attributes.Heading}
                 </div>

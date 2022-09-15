@@ -6,6 +6,7 @@ import Image from "next/image";
 import CircularProgress from "@mui/material/CircularProgress";
 import { useRouter } from "next/router";
 import BlogSection from "../../components/BlogSection";
+import MyForm from "../../components/Form";
 
 const Page = ({ blogData }) => {
   const baseURL = "https://guarded-atoll-38212.herokuapp.com";
@@ -36,10 +37,13 @@ const Page = ({ blogData }) => {
           >
             <div
               id="heading-box"
-              className="flex flex-col w-[70%] h-[100%]   absolute items-center justify-center p-10 font-black text-6xl text-gray-900 leading-[4.7rem] font-[Helvetica] mt-20   "
+              className="flex flex-col gap-3 w-[70%] h-[100%]   absolute items-center justify-center p-10 font-bold text-6xl text-gray-900 leading-[4rem]  mt-20   "
             >
+                <div className="h-full">
                 {blogData?.data[0].attributes.Heading}
-                <div className="font-light text-base mr-auto mt-5"><span className="w-5 h-10 border border-slate-600 rounded-full">blogData?.data[0].attributes.authorImage</span> By {blogData?.data[0].attributes.Author}</div>
+
+                  </div>
+                <div className="font-light text-base mr-auto mt-14">  By {blogData?.data[0].attributes.Author}</div>
                 <div className="font-light text-lg text-gray-600 mt-7"><span className="text-lg font-bold text-gray-600">Summary: </span>{blogData?.data[0].attributes.Description}</div>
             </div>
           </div>
@@ -77,6 +81,7 @@ escapeHtml={false}  />
         </div>
       )}
       <BlogSection featured={true} cmd={"pagination[start]=0&pagination=2"} theme={"light"}></BlogSection>
+      <MyForm></MyForm>
     </div>
   );
 };

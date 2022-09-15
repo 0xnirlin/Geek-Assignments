@@ -26,7 +26,7 @@ const Dabba = () => {
     },
   ];
   return (
-    <div className="flex items-center justify-center h-44 w-full  ">
+    <div className="flex items-center justify-center h-44 w-full mt-[50px]  ">
       <div className="flex flex-row h-fit gap-3 mt-4 bg-white  shadow-2xl border-slate-800 w-[70%] rounded-2xl p-6  ml-4">
         {arr.map((info) => (
           <Indabba

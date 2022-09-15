@@ -58,11 +58,11 @@ const Services = () => {
         },
       ];
   return (
-    <div className='h-screen  items-center justify-center grid grid-cols-4 grid-rows-2  gap-1 p-20 '>
+    <div className='h-auto  items-center justify-center grid lg:grid-cols-4 lg:grid-rows-2 md:grid-cols-2 md:grid-rows-2 grid-cols-1 grid-rows-1 gap-10 p-20  '>
         {arr.map((item) =>
         (
-            <div className='flex border-2 hover:border-violet-700 min-h-[80%] p-5 mt-auto mb-auto w-[90%] shadow-lg  rounded-xl transition-all duration-500 flex-col'>
-                <div id='icon' className='w-[20%] h-fit p-4  border-slate-400 rounded-xl bg-violet-200 ml-auto mr-auto mt-5 flex items-center justify-center '>
+            <div className='flex border-2 hover:border-violet-700 max-h-[400px] p-5 mt-auto mb-auto w-[300px] shadow-lg  rounded-xl transition-all duration-500 flex-col shrink'>
+                <div id='icon' className='w-[50px] h-fit p-4  border-slate-400 rounded-xl bg-violet-200 ml-auto mr-auto mt-5 flex items-center justify-center '>
                     {item.icon}
                 </div>
                 <div id='heading' className='flex font-bold text-xl mt-5 items-center justify-center '>{item.heading}</div>

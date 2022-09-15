@@ -11,13 +11,17 @@
   "dependencies": {
     "@emotion/react": "^11.10.4",
     "@emotion/styled": "^11.10.4",
+    "@livechat/widget-react": "^1.2.1",
     "@mui/material": "^5.10.3",
     "@mui/styled-engine-sc": "^5.10.3",
     "@tailwindcss/typography": "^0.5.4",
+    "@tawk.to/tawk-messenger-react": "^2.0.1",
     "axios": "^0.27.2",
+    "dotenv": "^16.0.2",
     "formik": "^2.2.9",
     "moment": "^2.29.4",
     "next": "12.2.5",
+    "nodemailer": "^6.7.8",
     "qs": "^6.11.0",
     "react": "18.2.0",
     "react-dom": "18.2.0",
@@ -25,11 +29,14 @@
     "react-lottie": "^1.2.3",
     "react-markdown": "^8.0.3",
     "react-moment": "^1.1.2",
+    "react-reveal": "^1.2.2",
     "react-slick": "^0.29.0",
     "rehype-raw": "^6.1.1",
     "remark-gfm": "^3.0.1",
     "slick-carousel": "^1.8.1",
-    "styled-components": "^5.3.5"
+    "styled-components": "^5.3.5",
+    "tawkto-react": "^3.0.1",
+    "yup": "^0.32.11"
   },
   "devDependencies": {
     "autoprefixer": "^10.4.8",
