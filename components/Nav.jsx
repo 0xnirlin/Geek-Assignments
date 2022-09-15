@@ -32,7 +32,7 @@ const Nav = () => {
                     <Link href="/contact" className="text-gray-900 dark:text-white hover:underline">Contact</Link>
                 </li>
                 <li>
-                    <Link href="/blog" className="text-gray-900 dark:text-white hover:underline">Blog</Link>
+                    <Link href="/Blog" className="text-gray-900 dark:text-white hover:underline">Blog</Link>
                 </li>
             </ul>
         </div>
