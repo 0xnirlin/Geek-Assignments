@@ -87,7 +87,7 @@ function MyForm() {
                     placeholder="Contact No."
                   />
                 </div>
-                <div className=" w-[100%]">
+                <div className=" w-[99%]">
                   <Field
                     name="course"
                     type="text"
